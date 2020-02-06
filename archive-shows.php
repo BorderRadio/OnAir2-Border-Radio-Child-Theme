@@ -54,7 +54,7 @@ $paged = qantumthemes_get_paged();
                      */
                     $args = array(
                         'post_type' => 'shows',
-                        'posts_per_page' => 9,
+                        'posts_per_page' => 12,
                         'post_status' => 'publish',
                         'suppress_filters' => false,
                         'paged' => $paged,
