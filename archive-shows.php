@@ -68,7 +68,7 @@ $paged = qantumthemes_get_paged();
                     $wp_query = new WP_Query( $args );
                     if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post();
                         ?>
-                        <div id="post-<?php the_ID(); ?>" <?php post_class( "col s12 m6 l4" ); ?>>
+                        <div id="post-<?php the_ID(); ?>" <?php post_class( "col s12 m6 l3" ); ?>>
                             <?php get_template_part (  'phpincludes/part-archive-item-shows' ); ?>
                         </div>
                         <?php
@@ -80,7 +80,7 @@ $paged = qantumthemes_get_paged();
                     if ( have_posts() ) : while ( have_posts() ) : the_post();
                         setup_postdata( $post );
                          ?>
-                        <div id="post-<?php the_ID(); ?>" <?php post_class( "col s12 m6 l4" ); ?>>
+                        <div id="post-<?php the_ID(); ?>" <?php post_class( "col s12 m6 l3" ); ?>>
                             <?php get_template_part (  'phpincludes/part-archive-item-shows' ); ?>
                         </div>
                         <?php
