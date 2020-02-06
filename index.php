@@ -63,9 +63,6 @@ Author URI: http://qantumthemes.com
                     </div>
                 </div>
             </div>
-            <div class="qt-pagination qt-content-primary">
-                 <?php get_template_part ( 'phpincludes/part-pagination' ); ?>
-            </div>
         </div>
     </div><!-- .qt-main end -->
     <?php get_template_part ( 'phpincludes/part-sponsors' ); ?>
