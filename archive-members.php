@@ -49,14 +49,14 @@ $paged = qantumthemes_get_paged();
         <div class="qt-container qt-vertical-padding-l qt-archive-team">
             <div class="row">
                 <?php 
-                    if(is_page()){
+                    if(true || is_page()){
                         /**
                          * [$args Query arguments]
                          * @var array
                          */
                         $args = array(
                             'post_type' => 'members',
-                            'posts_per_page' => 12,
+                            'posts_per_page' => 30,
                             'post_status' => 'publish',
                             'orderby' => array ( 'menu_order' => 'ASC', 'date' => 'DESC'),
                             'suppress_filters' => false,
