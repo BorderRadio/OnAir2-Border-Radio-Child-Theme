@@ -47,20 +47,20 @@ $paged = qantumthemes_get_paged();
 		<!-- ======================= CONTENT SECTION ======================= -->
 		<div class="qt-container qt-vertical-padding-l  qt-archive-team">
 			<div class="row">
-				<?php 
-				if(is_page()){
+				<?php
+				if(true || is_page()){
 					/**
 					 * [$args Query arguments]
 					 * @var array
 					 */
 					$args = array(
 						'post_type' => 'podcast',
-						'posts_per_page' => 9,
+						'posts_per_page' => 16,
 						'post_status' => 'publish',
 						'suppress_filters' => false,
 						'orderby' => 'meta_value',
-                    	'order'   => 'DESC',
-                    	'meta_key' => '_podcast_date',
+						'order'   => 'DESC',
+						'meta_key' => '_podcast_date',
 						'paged' => $paged
 					);
 					/**
@@ -70,7 +70,7 @@ $paged = qantumthemes_get_paged();
 					$wp_query = new WP_Query( $args );
 					if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post();
 						?>
-						<div id="post-<?php the_ID(); ?>" <?php post_class( "col s12 m6 l4" ); ?>>
+						<div id="post-<?php the_ID(); ?>" <?php post_class( "col s12 m6 l3" ); ?>>
 							<?php get_template_part (  'phpincludes/part-archive-item-podcast' ); ?>
 						</div>
 						<?php
@@ -80,7 +80,7 @@ $paged = qantumthemes_get_paged();
 				} else {
 					if ( have_posts() ) : while ( have_posts() ) : the_post();
 						 ?>
-						<div id="post-<?php the_ID(); ?>" <?php post_class( "col s12 m6 l4" ); ?>>
+						<div id="post-<?php the_ID(); ?>" <?php post_class( "col s12 m6 l3" ); ?>>
 							<?php get_template_part (  'phpincludes/part-archive-item-podcast' ); ?>
 						</div>
 						<?php
