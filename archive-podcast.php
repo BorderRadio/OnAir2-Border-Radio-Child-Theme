@@ -48,7 +48,7 @@ $paged = qantumthemes_get_paged();
 		<div class="qt-container qt-vertical-padding-l  qt-archive-team">
 			<div class="row">
 				<?php
-				if(true || is_page()){
+				if(is_page()){
 					/**
 					 * [$args Query arguments]
 					 * @var array
