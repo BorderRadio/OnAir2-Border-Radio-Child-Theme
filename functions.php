@@ -37,3 +37,14 @@ function qantumthemes_child_theme_setup() {
 	load_child_theme_textdomain( 'onair2-child',  get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'qantumthemes_child_theme_setup' );
+
+add_filter( 'pre_get_posts', function( $query ) {
+	/**
+	 * Display all the Speakers in one single page
+	 *
+	 * See https://gitpull.it/T162
+	 */
+	if ( is_tax( 'membertype' ) ) {
+		$query->set( 'nopaging', true );
+	}
+} );
