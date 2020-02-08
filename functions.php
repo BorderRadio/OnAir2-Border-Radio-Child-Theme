@@ -43,23 +43,27 @@ add_action( 'after_setup_theme', 'qantumthemes_child_theme_setup' );
  */
 add_filter( 'pre_get_posts', function( $query ) {
 
-	/**
-	 * Display all the Speakers in one single page
-	 *
-	 * See https://gitpull.it/T162
-	 * See https://gitpull.it/T178
-	 */
-	if ( is_tax( 'membertype' ) ) {
-		$query->set( 'nopaging', true );
+	if( !is_admin() && $query->is_main_query() ) {
 
-	/**
-	 * Increase Podcasts per page
-	 *
-	 * See https://gitpull.it/T160
-	 * See https://gitpull.it/T178
-	 *
-	 */
-	} elseif( is_post_type_archive( 'podcast' ) ) {
-		$query->set( 'posts_per_page', 16 );
+		/**
+		 * Display all the Speakers in one single page
+		 *
+		 * See https://gitpull.it/T162
+		 * See https://gitpull.it/T178
+		 */
+		if ( is_tax( 'membertype' ) ) {
+			$query->set( 'nopaging', true );
+
+		/**
+		 * Increase Podcasts per page
+		 *
+		 * See https://gitpull.it/T160
+		 * See https://gitpull.it/T178
+		 *
+		 */
+		} elseif( is_post_type_archive( 'podcast' ) ) {
+			$query->set( 'posts_per_archive_page', 16 );
+		}
+
 	}
 } );
