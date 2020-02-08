@@ -61,7 +61,7 @@ add_filter( 'pre_get_posts', function( $query ) {
 		 * See https://gitpull.it/T178
 		 *
 		 */
-		} elseif( is_post_type_archive( 'podcast' ) ) {
+		} elseif( is_post_type_archive( 'podcast' ) || is_tax( 'podcastfilter' ) ) {
 			$query->set( 'posts_per_archive_page', 16 );
 		}
 
