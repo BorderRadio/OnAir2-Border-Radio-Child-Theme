@@ -42,6 +42,7 @@ add_action( 'after_setup_theme', 'qantumthemes_child_theme_setup' );
  * Customize how posts are queried
  */
 add_filter( 'pre_get_posts', function( $query ) {
+
 	/**
 	 * Display all the Speakers in one single page
 	 *
@@ -58,7 +59,7 @@ add_filter( 'pre_get_posts', function( $query ) {
 	 * See https://gitpull.it/T178
 	 *
 	 */
-	} elseif( $query->get_queried_object()->name === 'podcast' ) {
+	} elseif( is_post_type_archive( 'podcast' ) ) {
 		$query->set( 'posts_per_page', 16 );
 	}
 } );
