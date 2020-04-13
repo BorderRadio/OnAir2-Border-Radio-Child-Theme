@@ -15,3 +15,24 @@
 /***************************************************************
 ****************************************************************
 ************* PUT YOUR CUSTOM STYLES BELOW ********************/
+
+/* site name too bigger on mobile */
+@media only screen and (max-width:400px) {
+	.brand-logo {
+		font-size:20px !important;
+	}
+}
+
+/*
+ * Make navbar fixed in mobile
+ *
+ * https://gitpull.it/T261
+ */
+@media only screen and (max-width:1200px) {
+	#qtmainmenucontainer {
+		position:fixed;
+	}
+	#maincontent {
+		padding-top:57px;
+	}
+}
