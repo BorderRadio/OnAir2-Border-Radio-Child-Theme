@@ -4,7 +4,7 @@
  * custom functions.php file
  */
 
-//wp_register_script('borderradio-custom', get_template_directory_uri() . '/script.js' );
+//wp_register_style( 'borderradio-custom', get_template_directory_uri() . '/script.css' );
 
 /**
  * Add parent and child stylesheets

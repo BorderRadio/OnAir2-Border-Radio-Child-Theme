@@ -7,13 +7,13 @@ Author: QantumThemes
 Author URI: http://qantumthemes.com
 */
 ?>
-<?php get_header(); ?> 
-    <?php  
+<?php get_header(); ?>
+    <?php
     get_template_part ('phpincludes/menu');
-    get_template_part ('phpincludes/part-searchbar'); 
+    get_template_part ('phpincludes/part-searchbar');
     ?>
     <div id="maincontent" class="qt-main">
-        <?php 
+        <?php
         /**
          * From V 2.5
          */
@@ -27,7 +27,7 @@ Author URI: http://qantumthemes.com
             <div class="qt-container qt-vertical-padding-l ">
                 <div class="row">
                     <div class="col s12 m8 push-m2">
-                        <?php 
+                        <?php
                             /**
                              * [$args Query arguments]
                              * @var array
@@ -46,7 +46,7 @@ Author URI: http://qantumthemes.com
                             if ( $wp_query->have_posts() ) : while ( $wp_query->have_posts() ) : $wp_query->the_post();
                                 $post = $wp_query->post;
                                 setup_postdata( $post );
-                               
+
                                 if(is_sticky()){
                                     get_template_part (  'phpincludes/part-archive-item-post-featured' );
                                 } else {
@@ -119,5 +119,5 @@ Author URI: http://qantumthemes.com
     </div><!-- .qt-main end -->
     <?php get_template_part ( 'phpincludes/part-sponsors' ); ?>
     <?php get_template_part ( 'phpincludes/footerwidgets' ); ?>
-    <?php get_template_part (  'phpincludes/part-player-sidebar' ); ?>
+    <?php get_template_part ( 'phpincludes/part-player-sidebar' ); ?>
 <?php get_footer(); ?>
