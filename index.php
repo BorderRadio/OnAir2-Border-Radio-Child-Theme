@@ -25,8 +25,7 @@ Author URI: http://qantumthemes.com
             <?php get_template_part( 'phpincludes/part-header-caption-archive'); ?>
             <!-- ======================= CONTENT SECTION ======================= -->
             <div class="qt-container qt-vertical-padding-l ">
-                <div class="row">
-                    <div class="col s12 m8 push-m2">
+		<div class="row">
                         <?php
                             /**
                              * [$args Query arguments]
@@ -47,20 +46,18 @@ Author URI: http://qantumthemes.com
                                 $post = $wp_query->post;
                                 setup_postdata( $post );
 
-                                if(is_sticky()){
+				 if(is_sticky()){
                                     get_template_part (  'phpincludes/part-archive-item-post-featured' );
                                 } else {
                                     get_template_part (  'phpincludes/part-archive-item-post' );
                                 }
-                                ?>
-                                <?php
                             endwhile; else: ?>
                                 <h3><?php echo esc_attr__("Sorry, nothing here","onair2")?></h3>
                             <?php endif;
                             wp_reset_postdata();
                         ?>
+			</div>
                         <hr class="qt-spacer-m">
-                    </div>
                 </div>
             </div>
 

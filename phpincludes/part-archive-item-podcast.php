@@ -14,7 +14,7 @@ Author URI: http://qantumthemes.com
 			<ul class="qt-tags">
 				<li>
 					<a href="<?php the_permalink() ?>"><?php the_date() ?></a>
-					<?php  echo qantumthemes_get_the_term_list( $post->ID, 'podcastfilter', '', '</li><li>', '' );  ?>
+					<span class="fucking-show-title"><?php  echo qantumthemes_get_the_term_list( $post->ID, 'podcastfilter', '', '</li><li>', '' );  ?></span>
 				</li>
 			</ul>
 			<div class="qt-feedback">
