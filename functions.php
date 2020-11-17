@@ -67,3 +67,10 @@ add_filter( 'pre_get_posts', function( $query ) {
 
 	}
 } );
+
+// Allow SVG upload in Border Radio website
+// https://gitpull.it/T591
+add_filter( 'upload_mimes', function( $mimes ) {
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+} );
