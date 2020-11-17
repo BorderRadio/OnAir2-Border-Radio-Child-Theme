@@ -20,7 +20,7 @@ Author URI: http://qantumthemes.com
         if (get_theme_mod( 'qt_playerbar_version', '1' ) === '2'){ ?>
             <hr class="qt-header-player-spacer">
         <?php } ?>
-        <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        
             <!-- ======================= HEADER SECTION ======================= -->
             <?php get_template_part( 'phpincludes/part-header-caption-archive'); ?>
             <!-- ======================= CONTENT SECTION ======================= -->
@@ -33,6 +33,7 @@ Author URI: http://qantumthemes.com
                              */
                             $args = array(
                                 'post_type' => 'post',
+				'posts_per_page' => 6,
                                 'post_status' => 'publish',
                                 'suppress_filters' => false,
                                 'paged' => $paged
@@ -68,7 +69,6 @@ Author URI: http://qantumthemes.com
 		 *
 		 * This block was imported from:
 		 *  /wp-content/themes/onair2/archive-podcast.php
-		 *
 		 * See https://gitpull.it/T166
 		 */
 		?>
