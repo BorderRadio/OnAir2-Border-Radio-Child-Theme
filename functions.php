@@ -8,7 +8,9 @@
 
 // Homepage: allow to change the splash screen
 // https://gitpull.it/T581
-define( 'ONAIR2_HOMEPAGE_SPLASH_IMG', '/wp-content/uploads/2020/04/MarasmaGenerale-1024x724.jpeg' );
+if( !defined( 'ONAIR2_HOMEPAGE_SPLASH_IMG' ) ) {
+	define( 'ONAIR2_HOMEPAGE_SPLASH_IMG', '/wp-content/uploads/2020/04/MarasmaGenerale-1024x724.jpeg' );
+}
 
 /**
  * Add parent and child stylesheets
