@@ -9,7 +9,17 @@ Author URI: http://qantumthemes.com
 
 if( (is_singular() || is_home() || is_front_page()) && has_post_thumbnail()){
 	?>
-	<div class="qt-header-bg" data-bgimage="<?php echo the_post_thumbnail_url( 'qantumthemes-xl' ); ?>" data-bgattachment="" data-parallax="1">
+	<div class="qt-header-bg" data-bgimage="<?php
+
+			// Homepage: allow to change the splash screen
+			// https://gitpull.it/T581
+			if( is_front_page() ) {
+				echo htmlspecialchars( ONAIR2_HOMEPAGE_SPLASH_IMG );
+			} else {
+				the_post_thumbnail_url( 'qantumthemes-xl' );
+			}
+
+		?>" data-bgattachment="" data-parallax="1">
 	</div>
 	<?php
 } else {
