@@ -9,7 +9,7 @@
 // Homepage: allow to change the splash screen
 // https://gitpull.it/T581
 if( !defined( 'ONAIR2_HOMEPAGE_SPLASH_IMG' ) ) {
-	define( 'ONAIR2_HOMEPAGE_SPLASH_IMG', '/wp-content/uploads/2020/04/MarasmaGenerale-1024x724.jpeg' );
+	define( 'ONAIR2_HOMEPAGE_SPLASH_IMG', '/wp-content/uploads/2020/12/border-radio-splash-2020.jpeg' );
 }
 
 /**
