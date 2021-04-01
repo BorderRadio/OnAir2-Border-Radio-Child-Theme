@@ -80,3 +80,36 @@ add_filter( 'upload_mimes', function( $mimes ) {
 	$mimes['svg'] = 'image/svg+xml';
 	return $mimes;
 } );
+
+/**
+ * Local Google Font cache
+ */
+define( 'GOOGLE_FONT_CACHE', 'gfont-proxy.border-radio.it' );
+
+/**
+ * Convert a Google Font domain to your local proxy cache
+ *
+ * See https://gitpull.it/T776
+ */
+function convert_google_font_to_local_proxy_cache( $url ) {
+	return str_replace( 'fonts.googleapis.com', 'gfont-proxy.border-radio.it', $url );
+}
+
+/**
+ * Avoid Google Fonts in your stylesheets
+ *
+ * https://gitpull.it/T186
+ */
+add_filter( 'style_loader_src', 'convert_google_font_to_local_proxy_cache' );
+
+/**
+ * Avoid Google Fonts in your DNS prefetch
+ *
+ * https://gitpull.it/T186
+ */
+add_filter( 'wp_resource_hints', function( $urls ) {
+	foreach( $urls as & $url ) {
+		$url = convert_google_font_to_local_proxy_cache( $url );
+	}
+	return $urls;
+} );
