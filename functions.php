@@ -92,7 +92,7 @@ define( 'GOOGLE_FONT_CACHE', 'gfont-proxy.border-radio.it' );
  * See https://gitpull.it/T776
  */
 function convert_google_font_to_local_proxy_cache( $url ) {
-	return str_replace( 'fonts.googleapis.com', 'gfont-proxy.border-radio.it', $url );
+	return str_replace( 'fonts.googleapis.com', GOOGLE_FONT_CACHE, $url );
 }
 
 /**
